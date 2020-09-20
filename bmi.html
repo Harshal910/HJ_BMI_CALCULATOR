@@ -1,0 +1,88 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+
+body{
+
+            opacity:0.7;         
+            background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('download3.jpg');
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-positioin:center;
+            width:100%;
+            height:100vh;
+            position:relative;
+        }
+      
+         header{
+            width:100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        
+</style>
+
+</head>
+<body>
+<header>
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white text-center"> BMI CALCULATOR </div>
+        <div class="card-header bg-primary text-white text-center"> Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. </div>
+        <div class="card-body">
+            <form class="w-50 m-auto" onsubmit="return false">
+                <div class="form-group">
+                    <label> Weight: </label>
+                    <input type="number" name="" placeholder="Weight in Kg" required id="weight" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label> Height: </label>
+                    <input type="text" name="" placeholder="Height in Ft" required id="height" class="form-control">
+                </div>
+
+                
+                <div>
+                    <button type="submit" class="btn btn-primary" onclick="getbmivalue()">Check BMI</button>
+                    <div class="form-group">
+                        <label> BMI Value Is: </label>
+                        <input type="text" name="" id="bmivalue" class="form-control">
+                    </div>
+            </form>
+        </div>
+        <div class="card-footer text-center"> A healthy BMI ranges between 19 and 25. </div>
+    </div>
+</div>
+</header>
+
+<script>
+    
+    function getbmivalue(){
+                    var weight = document.getElementById('weight').value;
+                    var height = document.getElementById('height').value;
+
+                    height = height * 12;
+                    height = height * 0.025; //height in meter
+
+                    var newbmivalue = weight / (Math.pow(height,2));
+
+                    newbmivalue = Math.round(newbmivalue);
+
+                    document.getElementById('bmivalue').value = newbmivalue;
+
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
